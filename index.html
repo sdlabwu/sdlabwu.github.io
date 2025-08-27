@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什麼？方格選擇器</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ 今天吃什麼呢？ 🎰</h1>
+            <p class="subtitle">拉霸機風格美食選擇器！</p>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <!-- 左側：全身可愛人像 -->
+                <div class="character-container">
+                    <div class="full-character" id="character">
+                        <!-- 頭部 -->
+                        <div class="head">
+                            <div class="face">
+                                <div class="eyes">
+                                    <div class="eye left-eye">
+                                        <div class="pupil"></div>
+                                    </div>
+                                    <div class="eye right-eye">
+                                        <div class="pupil"></div>
+                                    </div>
+                                </div>
+                                <div class="mouth" id="mouth"></div>
+                                <div class="blush left-blush"></div>
+                                <div class="blush right-blush"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 身體 -->
+                        <div class="body">
+                            <div class="shirt"></div>
+                            <div class="arms">
+                                <div class="arm left-arm"></div>
+                                <div class="arm right-arm"></div>
+                            </div>
+                            <div class="hands">
+                                <div class="hand left-hand"></div>
+                                <div class="hand right-hand"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 腿部 -->
+                        <div class="legs">
+                            <div class="leg left-leg"></div>
+                            <div class="leg right-leg"></div>
+                            <div class="feet">
+                                <div class="foot left-foot"></div>
+                                <div class="foot right-foot"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 語音泡泡 -->
+                        <div class="speech-bubble" id="speechBubble">
+                            按下按鈕選擇美食吧！✨
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右側：方格選擇器 -->
+                <div class="slot-machine-container">
+                    <!-- 拉霸機外框 -->
+                    <div class="slot-machine-frame">
+                        <div class="frame-top">
+                            <div class="machine-title">🎰 美食拉霸機 🎰</div>
+                        </div>
+                        
+                        <!-- 方格網格 - 4x4布局，12個食物圍繞中央 -->
+                        <div class="grid-container" id="gridContainer">
+                            <!-- 上方橫排 (4個) -->
+                            <div class="food-slot" data-food="咖哩飯" data-position="0">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍛</span>
+                                    <span class="food-name">咖哩飯</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="拌飯" data-position="1">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍲</span>
+                                    <span class="food-name">拌飯</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="牛肉麵" data-position="2">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍜</span>
+                                    <span class="food-name">牛肉麵</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="火鍋" data-position="3">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍲</span>
+                                    <span class="food-name">火鍋</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 右側縱排 (2個) -->
+                            <div class="food-slot" data-food="水餃" data-position="4">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🥟</span>
+                                    <span class="food-name">水餃</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="沙拉" data-position="5">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🥗</span>
+                                    <span class="food-name">沙拉</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 下方橫排 (4個) -->
+                            <div class="food-slot" data-food="壽司" data-position="6">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍣</span>
+                                    <span class="food-name">壽司</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="披薩" data-position="7">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍕</span>
+                                    <span class="food-name">披薩</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="減肥" data-position="8">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🚫</span>
+                                    <span class="food-name">減肥</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="漢堡" data-position="9">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍔</span>
+                                    <span class="food-name">漢堡</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 左側縱排 (2個) -->
+                            <div class="food-slot" data-food="小籠包" data-position="10">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🥟</span>
+                                    <span class="food-name">小籠包</span>
+                                </div>
+                            </div>
+                            <div class="food-slot" data-food="義大利麵" data-position="11">
+                                <div class="slot-content">
+                                    <span class="food-emoji">🍝</span>
+                                    <span class="food-name">義大利麵</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 中央選中指示器 -->
+                            <div class="center-indicator" id="centerIndicator">
+                                <div class="indicator-text">?</div>
+                                <div class="indicator-subtext">點擊開始</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 控制按鈕 -->
+                        <div class="control-panel">
+                            <button class="spin-button" id="spinButton" onclick="startSlotMachine()">
+                                <span class="button-text">🎰 開始選擇！</span>
+                                <div class="button-glow"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
